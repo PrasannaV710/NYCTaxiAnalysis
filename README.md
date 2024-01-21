@@ -17,6 +17,7 @@ Learn more about data modeling concepts [here](https://www.ibm.com/docs/en/infor
 ![DataModel](data_model.jpeg)
 
 Once the data model is created the data is ingested into Cloud Storage. I create a bucket and then upload the csv file into it, making sure the bucket has public access to ensure Mage can extract data from it (we can later setup access rules to prevent unauthorized access).
+
 ![CloudStorage](image.png)
 
 After this I spin up a VM instance in Google Cloud Compute Engine, install the necessary libraries including Mage AI and then begin creating the pipeline.
@@ -25,6 +26,7 @@ Below is the high level tree structure of the pipeline in Mage UI. You can see t
 
 ### BigQuery
 Once the pipeline is built, the data is then loaded into BigQuery in the form of fact and dimension tables, according to the data model.
+
 ![BigQuery](image-2.png)
 
 I have then joined the various dimension and fact tables to create a new table called analytics. From here we can start building the dashboard.
